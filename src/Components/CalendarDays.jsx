@@ -1,32 +1,23 @@
-import { useState } from "react";
+import DataContext from "./DataContext";
+import { useContext, useEffect } from "react";
+import { renderCalendar } from "../Actions/calendarActions";
 
 function CalendarDays() {
+    const { dataCalendar, dispachDataCalendar } = useContext(DataContext);
 
-    const [weeksTr, setWeeksTr] = useState([{}]);
-
-    /*
-    [{
-        weekDay : 1-7,
-        day: 1-31
-    }]
-    */
-
-    const today = new Date();
-
-    const year = today.getFullYear();
-    const month = today.getMonth();
-
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-
-
-    /*
-    savaites dienu listas ==> [1..7]   tr
-    metodas menesio dienu listui 28-30-31    td
-    */
+    useEffect(() => {
+        dispachDataCalendar(renderCalendar())
+    }, [dispachDataCalendar]);
 
     return (
         <tbody>
+            {dataCalendar && dataCalendar.data.map((week, i) => {
+                return (
+                    <tr key={i} >
+                        {week.map(day => <td key={day.value} >{day.value}</td>)}
+                    </tr>
+                )
+            })}
 
         </tbody>
     )
