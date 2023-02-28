@@ -11,8 +11,8 @@ function calendarReducer(state, action) {
 
     const today = new Date();
 
-    let currentYear = today.getFullYear(); //2023
-    let currentMonth = today.getMonth(); //0....11
+    let currentYear = today.getFullYear();
+    let currentMonth = today.getMonth();
 
     const renderData = () => {
         newState.data = [];
@@ -49,6 +49,8 @@ function calendarReducer(state, action) {
         case RENDER_CALENDAR:
             renderData();
             break;
+
+
 
         default:
     }
