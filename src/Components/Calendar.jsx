@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { nextMonth, prevMonth } from "../Actions/calendarActions";
 import CalendarDays from "./CalendarDays";
 import DataContext from "./DataContext";
 
@@ -9,13 +10,21 @@ function Calendar() {
     const months = ["January", "February", "March", "April", "May", "June", "July",
         "August", "September", "October", "November", "December"];
 
+    const handlePrevMonth = () => {
+        dispachDataCalendar(prevMonth());
+    };
+
+    const handleNextMonth = () => {
+        dispachDataCalendar(nextMonth());
+    };
+
     return (
         <>
 
             <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                <button style={{ height: "20px" }}>{"<"}</button>
+                <button style={{ height: "20px" }} onClick={handlePrevMonth}>{"<"}</button>
                 <h2>{dataCalendar && dataCalendar.year + ' ' + months[dataCalendar.month]}</h2>
-                <button style={{ height: "20px" }}>{">"}</button>
+                <button style={{ height: "20px" }} onClick={handleNextMonth}>{">"}</button>
             </div>
             <table>
                 <thead>

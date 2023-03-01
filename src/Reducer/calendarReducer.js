@@ -1,4 +1,4 @@
-import { RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
+import { NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
 
 function calendarReducer(state, action) {
 
@@ -50,6 +50,31 @@ function calendarReducer(state, action) {
             renderData();
             break;
 
+        case PREV_MONTH:
+            if (newState) {
+                if (!newState.month) {
+                    currentYear = newState.year - 1;
+                    currentMonth = 11;
+                } else {
+                    currentYear = newState.year;
+                    currentMonth = newState.month - 1;
+                }
+            }
+            renderData();
+            break;
+
+        case NEXT_MONTH:
+            if (newState) {
+                if (newState.month === 11) {
+                    currentYear = newState.year + 1;
+                    currentMonth = 0;
+                } else {
+                    currentYear = newState.year;
+                    currentMonth = newState.month + 1;
+                }
+            }
+            renderData();
+            break;
 
 
         default:
