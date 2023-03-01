@@ -33,6 +33,15 @@ function calendarReducer(state, action) {
 
                 if (i === weekDay && day < daysInMonth) {
                     dayObj.value = ++day;
+                    dayObj.className = 'thisMonth';
+
+                    if (today.getDate() === day &&
+                        today.getMonth() === currentMonth &&
+                        today.getFullYear() === currentYear) {
+
+                        dayObj.className = ' today'
+                    };
+
                 } else if (day >= daysInMonth) {
                     dayObj.value = ++day - daysInMonth;
                 } else {

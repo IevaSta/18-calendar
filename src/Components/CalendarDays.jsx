@@ -14,7 +14,7 @@ function CalendarDays() {
             {dataCalendar && dataCalendar.data.map((week, i) => {
                 return (
                     <tr key={i} >
-                        {week.map(day => <td key={day.value} >{day.value}</td>)}
+                        {week.map(day => <td key={day.value} className={day.className}>{day.value}</td>)}
                     </tr>
                 )
             })}

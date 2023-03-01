@@ -20,7 +20,6 @@ function Calendar() {
 
     return (
         <>
-
             <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                 <button style={{ height: "20px" }} onClick={handlePrevMonth}>{"<"}</button>
                 <h2>{dataCalendar && dataCalendar.year + ' ' + months[dataCalendar.month]}</h2>
