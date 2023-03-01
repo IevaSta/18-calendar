@@ -4,8 +4,8 @@ function calendarReducer(state, action) {
 
     let newState = state ? { ...state } :
         {
-            lastYear: '',
-            lastMonth: '',
+            year: '',
+            month: '',
             data: []
         };
 
@@ -16,8 +16,8 @@ function calendarReducer(state, action) {
 
     const renderData = () => {
         newState.data = [];
-        newState.lastYear = currentYear;
-        newState.lastMonth = currentMonth;
+        newState.year = currentYear;
+        newState.month = currentMonth;
 
         const prevDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
