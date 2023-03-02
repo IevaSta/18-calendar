@@ -2,12 +2,7 @@ import { NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calenda
 
 function calendarReducer(state, action) {
 
-    let newState = state ? { ...state } :
-        {
-            year: '',
-            month: '',
-            data: []
-        };
+    let newState = { ...state };
 
     const today = new Date();
 
@@ -60,37 +55,30 @@ function calendarReducer(state, action) {
             break;
 
         case PREV_MONTH:
-            if (newState) {
-                if (!newState.month) {
-                    currentYear = newState.year - 1;
-                    currentMonth = 11;
-                } else {
-                    currentYear = newState.year;
-                    currentMonth = newState.month - 1;
-                }
+            if (!newState.month) {
+                currentYear = newState.year - 1;
+                currentMonth = 11;
+            } else {
+                currentYear = newState.year;
+                currentMonth = newState.month - 1;
             }
+
             renderData();
             break;
 
         case NEXT_MONTH:
-            if (newState) {
-                if (newState.month === 11) {
-                    currentYear = newState.year + 1;
-                    currentMonth = 0;
-                } else {
-                    currentYear = newState.year;
-                    currentMonth = newState.month + 1;
-                }
+            if (newState.month === 11) {
+                currentYear = newState.year + 1;
+                currentMonth = 0;
+            } else {
+                currentYear = newState.year;
+                currentMonth = newState.month + 1;
             }
             renderData();
             break;
-
-
         default:
     }
-
     return newState;
-
 }
 
 export default calendarReducer;

@@ -8,7 +8,13 @@ import calendarReducer from './Reducer/calendarReducer';
 
 function App() {
 
-  const [dataCalendar, dispachDataCalendar] = useReducer(calendarReducer, null);
+  const [dataCalendar, dispachDataCalendar] = useReducer(calendarReducer,
+    {
+      year: '',
+      month: '',
+      data: []
+    }
+  );
 
   return (
     <DataContext.Provider

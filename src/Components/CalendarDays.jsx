@@ -9,12 +9,16 @@ function CalendarDays() {
         dispachDataCalendar(renderCalendar())
     }, [dispachDataCalendar]);
 
+    const handleFocus = (day) => {
+        console.log(day);
+    }
+
     return (
         <tbody>
             {dataCalendar && dataCalendar.data.map((week, i) => {
                 return (
                     <tr key={i} >
-                        {week.map(day => <td key={day.value} className={day.className}>{day.value}</td>)}
+                        {week.map(day => <td onClick={() => handleFocus(day)} key={day.value} className={day.className}>{day.value}</td>)}
                     </tr>
                 )
             })}
