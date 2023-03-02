@@ -1,7 +1,6 @@
 import { FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 
 function notesReducer(state, action) {
-
     let newState = { ...state };
 
     const today = new Date();
@@ -25,7 +24,6 @@ function notesReducer(state, action) {
             month = action.payload.month;
             day = action.payload.day;
             weekDay = action.payload.weekDay;
-
             renderData();
             break;
 
