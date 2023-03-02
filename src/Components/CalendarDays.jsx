@@ -1,16 +1,25 @@
 import DataContext from "./DataContext";
 import { useContext, useEffect } from "react";
 import { renderCalendar } from "../Actions/calendarActions";
+import { focusDay } from "../Actions/notesActions";
 
 function CalendarDays() {
-    const { dataCalendar, dispachDataCalendar } = useContext(DataContext);
+    const { dataCalendar, dispachDataCalendar, dispachDataNotes } = useContext(DataContext);
 
     useEffect(() => {
         dispachDataCalendar(renderCalendar())
     }, [dispachDataCalendar]);
 
     const handleFocus = (day) => {
-        console.log(day);
+
+        if (day.weekDay !== '') {
+            dispachDataNotes(focusDay({
+                year: dataCalendar.year,
+                month: dataCalendar.month,
+                weekDay: day.weekDay,
+                day: day.value
+            }))
+        }
     }
 
     return (

@@ -5,6 +5,7 @@ import DataContext from './Components/DataContext';
 import Header from './Components/Header';
 import Notes from './Components/Notes';
 import calendarReducer from './Reducer/calendarReducer';
+import notesReducer from './Reducer/notesReducer';
 
 function App() {
 
@@ -16,11 +17,23 @@ function App() {
     }
   );
 
+  const [dataNotes, dispachDataNotes] = useReducer(notesReducer,
+    {
+      year: '',
+      month: '',
+      day: '',
+      weekDay: '',
+      data: null
+    }
+  )
+
   return (
     <DataContext.Provider
       value={{
         dataCalendar,
-        dispachDataCalendar
+        dispachDataCalendar,
+        dataNotes,
+        dispachDataNotes
       }}>
 
       <Header />
