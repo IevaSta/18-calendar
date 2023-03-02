@@ -22,11 +22,12 @@ function calendarReducer(state, action) {
             let week = [];
 
             for (let i = 0; i < 7; i++) {
-                let dayObj = { value: '', className: '' };
+                let dayObj = { weekDay: '', value: '', className: '' };
 
                 const weekDay = new Date(currentYear, currentMonth, day).getDay();
 
                 if (i === weekDay && day < daysInMonth) {
+                    dayObj.weekDay = weekDay;
                     dayObj.value = ++day;
                     dayObj.className = 'thisMonth';
 
@@ -34,7 +35,7 @@ function calendarReducer(state, action) {
                         today.getMonth() === currentMonth &&
                         today.getFullYear() === currentYear) {
 
-                        dayObj.className = ' today'
+                        dayObj.className = ' today';
                     };
 
                 } else if (day >= daysInMonth) {
