@@ -3,7 +3,7 @@
     justify-content: center;
 
     .left {
-        width: 50%;
+        min-width: 400px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -13,6 +13,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: rgb(179, 179, 179);
+            height: 35px;
         }
     }
 

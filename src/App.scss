@@ -1,5 +1,6 @@
 * {
   font-family: 'Roboto', sans-serif;
+  color: #2e3136;
 }
 
 body {
@@ -11,3 +12,5 @@ body {
 
 @import 'Scss/frame';
 @import 'Scss/days';
+@import 'Scss/buttons';
+@import 'Scss/table';
