@@ -24,8 +24,8 @@ function Notes() {
     const { year, month, day, weekDay, data } = dataNotes;
 
     return (
-        <div>
-            <h2>{weekDayTitle[weekDay] + ' ' + day}</h2>
+        <div className='right'>
+            <h2 className='right_header'>{weekDayTitle[weekDay] + ' ' + day}</h2>
             <form>
 
             </form>

@@ -1,0 +1,28 @@
+.container_main {
+    display: flex;
+    justify-content: center;
+
+    .left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin: 20px;
+
+        .left_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .right {
+        width: 50%;
+        margin: 20px;
+
+        .right_header {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

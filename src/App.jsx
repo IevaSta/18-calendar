@@ -28,22 +28,24 @@ function App() {
   )
 
   return (
-    <DataContext.Provider
-      value={{
-        dataCalendar,
-        dispachDataCalendar,
-        dataNotes,
-        dispachDataNotes
-      }}>
 
-      <Header />
+    <div >
+      <DataContext.Provider
+        value={{
+          dataCalendar,
+          dispachDataCalendar,
+          dataNotes,
+          dispachDataNotes
+        }}>
 
-      <main>
-        <Calendar />
-        <Notes />
-      </main>
+        <Header />
 
-      {/* 
+        <main className='container_main'>
+          <Calendar />
+          <Notes />
+        </main>
+
+        {/* 
       Header: Kalendoriaus pavadinimas
       Main:
       -kalendorius
@@ -58,7 +60,8 @@ function App() {
           -mygtukai edit/delete
 */}
 
-    </DataContext.Provider>
+      </DataContext.Provider>
+    </div>
   );
 }
 
