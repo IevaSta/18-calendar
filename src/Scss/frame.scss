@@ -20,11 +20,17 @@
 
     .right {
         width: 50%;
-        margin: 20px;
+        background-color: rgb(179, 179, 179);
+        margin-top: 20px;
+        margin-bottom: 20px;
 
         .right_header {
             display: flex;
             justify-content: center;
+            align-items: center;
+            height: 35px;
+            margin: 0;
+            background-color: #5d626b;
         }
     }
 }
