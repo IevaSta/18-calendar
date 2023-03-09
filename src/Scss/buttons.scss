@@ -21,19 +21,23 @@ button {
         transform: translateY(-1px);
     }
 
-    // &.yellow {
-    //     background-color: #fbdb86;
-    //     width: 100%;
+    &.yellow {
+        background-color: #fbdb86;
+        width: 15%;
+        height: 25.5px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #2e3136;
 
-    //     &:hover,
-    //     &:focus {
-    //         background-color: #f5d376;
-    //     }
+        &:hover,
+        &:focus {
+            background-color: #f5d376;
+        }
 
-    //     &:active {
-    //         background-color: #e6c262;
-    //     }
-    // }
+        &:active {
+            background-color: #e6c262;
+        }
+    }
 
     // &.green {
     //     background-color: #b3c963;

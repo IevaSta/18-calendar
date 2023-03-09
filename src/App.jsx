@@ -46,12 +46,6 @@ function App() {
         </main>
 
         {/* 
-      Header: Kalendoriaus pavadinimas
-      Main:
-      -kalendorius
-        -metai menesis
-        -mygtukai menesiu keitimui
-        -kalendoriaus dienos
       -notes
         -savaites diena ir menesio diena
         -notes sukurimas(form)

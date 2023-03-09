@@ -26,8 +26,9 @@ function Notes() {
     return (
         <div className='right'>
             <h2 className='right_header'>{weekDayTitle[weekDay] + ' ' + day}</h2>
-            <form>
-
+            <form onSubmit={() => { }} className="form">
+                <input placeholder="Write your super note here!" />
+                <button type="submit" className="yellow">Add</button>
             </form>
             <NotesList />
         </div>
