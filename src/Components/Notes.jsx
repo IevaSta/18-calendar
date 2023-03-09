@@ -21,7 +21,7 @@ function Notes() {
         'Sunday'
     ];
 
-    const { year, month, day, weekDay, data } = dataNotes;
+    const { year, month, day, weekDay } = dataNotes;
 
 
     const noteRef = useRef();
@@ -29,8 +29,12 @@ function Notes() {
         const note = noteRef.current.value;
 
         dispachDataNotes(addNote(
-            [note]
+            {
+                date: { year, month, day },
+                note
+            }
         ));
+
         noteRef.current.value = '';
     }
 

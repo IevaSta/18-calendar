@@ -1,4 +1,5 @@
 import { ADD_NOTE, FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import getId from "../Functions/getId";
 
 function notesReducer(state, action) {
     let newState = { ...state };
@@ -26,7 +27,7 @@ function notesReducer(state, action) {
             break;
 
         case ADD_NOTE:
-            newState.data = [...newState.data, ...action.payload]
+            newState.data = [...newState.data, { ...action.payload, id: getId() }]
             localStorage.setItem('notesList_data', JSON.stringify(newState.data));
             break;
 
