@@ -23,7 +23,7 @@ function App() {
       month: '',
       day: '',
       weekDay: '',
-      data: null
+      data: []
     }
   )
 

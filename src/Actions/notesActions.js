@@ -1,4 +1,4 @@
-import { FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 
 export function renderNotes() {
     return {
@@ -12,3 +12,10 @@ export function focusDay(data) {
         payload: data
     }
 };
+
+export function addNote(data) {
+    return {
+        type: ADD_NOTE,
+        payload: data
+    }
+}

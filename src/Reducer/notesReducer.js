@@ -1,7 +1,9 @@
-import { FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 
 function notesReducer(state, action) {
     let newState = { ...state };
+
+    newState.data = JSON.parse(localStorage.getItem('notesList_data')) || [];
 
     const today = new Date();
 
@@ -15,15 +17,20 @@ function notesReducer(state, action) {
     }
 
     switch (action.type) {
-        case RENDER_NOTES:
-            renderData();
-            break;
-
         case FOCUS_DAY:
             year = action.payload.year;
             month = action.payload.month;
             day = action.payload.day;
             weekDay = action.payload.weekDay;
+            renderData();
+            break;
+
+        case ADD_NOTE:
+            newState.data = [...newState.data, ...action.payload]
+            localStorage.setItem('notesList_data', JSON.stringify(newState.data));
+            break;
+
+        case RENDER_NOTES:
             renderData();
             break;
 

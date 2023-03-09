@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { renderNotes } from "../Actions/notesActions";
+import { useContext, useEffect, useRef } from "react";
+import { addNote, renderNotes } from "../Actions/notesActions";
 import DataContext from "./DataContext";
 import NotesList from "./NotesList";
 
@@ -23,11 +23,22 @@ function Notes() {
 
     const { year, month, day, weekDay, data } = dataNotes;
 
+
+    const noteRef = useRef();
+    const addNewNote = () => {
+        const note = noteRef.current.value;
+
+        dispachDataNotes(addNote(
+            [note]
+        ));
+        noteRef.current.value = '';
+    }
+
     return (
         <div className='right'>
             <h2 className='right_header'>{weekDayTitle[weekDay] + ' ' + day}</h2>
-            <form onSubmit={() => { }} className="form">
-                <input placeholder="Write your super note here!" />
+            <form onSubmit={addNewNote} className="form">
+                <input ref={noteRef} placeholder="Write your super note here!" />
                 <button type="submit" className="yellow">Add</button>
             </form>
             <NotesList />
