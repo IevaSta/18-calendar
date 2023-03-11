@@ -28,14 +28,16 @@ function Notes() {
     const addNewNote = () => {
         const note = noteRef.current.value;
 
-        dispachDataNotes(addNote(
-            {
-                date: { year, month, day },
-                note
-            }
-        ));
+        if (note) {
+            dispachDataNotes(addNote(
+                {
+                    date: { year, month, day },
+                    note
+                }
+            ));
 
-        noteRef.current.value = '';
+            noteRef.current.value = '';
+        }
     }
 
     return (
