@@ -22,20 +22,20 @@ button {
     }
 
     &.yellow {
-        background-color: #fbdb86;
-        width: 100px;
+        background-color: white;
+        width: 50px;
         height: 30px;
-        font-size: 15px;
-        font-weight: 400;
-        color: #2e3136;
+        font-size: 40px;
+        font-weight: 700;
+        color: #fbdb86;
 
         &:hover,
         &:focus {
-            background-color: #f5d376;
+            color: #f5d376;
         }
 
         &:active {
-            background-color: #e6c262;
+            color: #e6c262;
         }
     }
 

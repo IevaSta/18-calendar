@@ -12,13 +12,13 @@ function Notes() {
     }, [dispachDataNotes]);
 
     const weekDayTitle = [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
+        'MON',
+        'TUE',
+        'WED',
+        'THU',
+        'FRI',
+        'SAT',
+        'SUN'
     ];
 
     const { year, month, day, weekDay } = dataNotes;
@@ -45,7 +45,7 @@ function Notes() {
             <h2 className='right_header'>{weekDayTitle[weekDay] + ' ' + day}</h2>
             <form onSubmit={addNewNote} className="form">
                 <input ref={noteRef} placeholder="Write your super note here!" />
-                <button type="submit" className="yellow">Add</button>
+                <button type="submit" className="black">✓</button>
             </form>
             <NotesList />
         </div>

@@ -1,6 +1,7 @@
 .form {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 
     input {
         padding: 0 0 0 20px;
@@ -13,6 +14,17 @@
 
         &::placeholder {
             color: rgb(214, 214, 214);
+        }
+    }
+}
+
+.notesList {
+    ul {
+        padding: 0 0 0 20px;
+        margin-left: 15px;
+
+        li {
+            padding: 10px 0 10px;
         }
     }
 }
