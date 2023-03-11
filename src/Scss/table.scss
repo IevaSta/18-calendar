@@ -1,15 +1,19 @@
 .table {
-    width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 400px;
 
     thead {
         color: #f5d376;
-        font-size: 20px;
+        font-size: 18px;
 
         tr {
+            width: 40px;
+
             th {
-                border-bottom: solid 1px #13181e;
-                font-weight: bold;
+                font-weight: 400;
+                padding-bottom: 20px;
             }
         }
     }
@@ -19,9 +23,29 @@
         text-align: center;
 
         tr {
+            height: 57px;
+
             td {
                 font-weight: 400;
-                border: solid 1px #13181e;
+                border-radius: 50%;
+
+                &:hover,
+                &:focus {
+                    background-color: pink;
+                }
+
+                &:active {
+                    background-color: rgb(228, 133, 148);
+                }
+            }
+
+            .notThisMonth {
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: white;
+                }
             }
         }
     }

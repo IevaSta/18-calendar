@@ -21,20 +21,22 @@ function Calendar() {
     return (
         <div className='left'>
             <div className='left_header'>
-                <button className='black' onClick={handlePrevMonth}>{"<"}</button>
                 <h2>{dataCalendar && dataCalendar.year + ' ' + months[dataCalendar.month]}</h2>
-                <button className='black' onClick={handleNextMonth}>{">"}</button>
+                <div>
+                    <button className='black' onClick={handlePrevMonth}>&#171;</button>
+                    <button className='black' onClick={handleNextMonth}>&#187;</button>
+                </div>
             </div>
             <table className='table'>
                 <thead>
                     <tr>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                        <th>SUN</th>
                     </tr>
                 </thead>
                 <CalendarDays />

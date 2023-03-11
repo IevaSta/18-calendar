@@ -23,10 +23,10 @@ button {
 
     &.yellow {
         background-color: #fbdb86;
-        width: 15%;
-        height: 25.5px;
+        width: 100px;
+        height: 30px;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 400;
         color: #2e3136;
 
         &:hover,
@@ -54,19 +54,17 @@ button {
     // }
 
     &.black {
-        background-color: #5d626b;
-        width: 15%;
+        background-color: white;
+        font-size: 40px;
+        width: 30px;
         height: 35px;
-        color: white;
+        color: #2e3136;
         letter-spacing: 3px;
 
         &:hover,
-        &:focus {
-            background-color: #383d42;
-        }
-
+        &:focus,
         &:active {
-            background-color: #13181e;
+            color: #13181e;
         }
     }
 

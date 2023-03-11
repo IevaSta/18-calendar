@@ -1,15 +1,7 @@
 .today {
-    background-color: rgb(179, 179, 179);
+    background-color: #fbdb86;
 }
 
-/*
-dienu stiliai:
-
-other month - neryskus (default)
-current month - ryskus ----> thisMonth klase
-
-darbo d
-savaitgalis
-
-current day ---> today klase
-*/
+.notThisMonth {
+    color: rgb(155, 93, 93);
+}

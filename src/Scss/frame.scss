@@ -13,16 +13,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgb(179, 179, 179);
             height: 35px;
+
+            h2 {
+                text-transform: uppercase;
+                padding-left: 8px;
+            }
+
+            button {
+                &:first-child {
+                    margin-right: 10px;
+                    padding-bottom: 10px;
+                }
+            }
         }
     }
 
     .right {
         width: 50%;
-        background-color: rgb(179, 179, 179);
         margin-top: 20px;
         margin-bottom: 20px;
+        border-left: 1px solid #fbdb86;
 
         .right_header {
             display: flex;
@@ -30,7 +41,7 @@
             align-items: center;
             height: 35px;
             margin: 0;
-            background-color: #5d626b;
+            padding-bottom: 15px;
         }
     }
 }
