@@ -25,6 +25,7 @@ function Notes() {
 
 
     const noteRef = useRef();
+
     const addNewNote = () => {
         const note = noteRef.current.value;
 

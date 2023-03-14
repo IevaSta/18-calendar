@@ -18,6 +18,10 @@ function notesReducer(state, action) {
     }
 
     switch (action.type) {
+        case RENDER_NOTES:
+            renderData();
+            break;
+
         case FOCUS_DAY:
             year = action.payload.year;
             month = action.payload.month;
@@ -29,10 +33,6 @@ function notesReducer(state, action) {
         case ADD_NOTE:
             newState.data = [...newState.data, { ...action.payload, id: getId() }]
             localStorage.setItem('notesList_data', JSON.stringify(newState.data));
-            break;
-
-        case RENDER_NOTES:
-            renderData();
             break;
 
         default:

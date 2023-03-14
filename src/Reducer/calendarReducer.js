@@ -1,4 +1,4 @@
-import { NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
+import { FOCUS_DAY_CLASS, NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
 
 function calendarReducer(state, action) {
 
@@ -8,6 +8,7 @@ function calendarReducer(state, action) {
 
     let currentYear = today.getFullYear();
     let currentMonth = today.getMonth();
+    let focusDay;
 
     const renderData = () => {
         newState.data = [];
@@ -30,12 +31,13 @@ function calendarReducer(state, action) {
                     dayObj.weekDay = weekDay;
                     dayObj.value = ++day;
 
-
                     if (today.getDate() === day &&
                         today.getMonth() === currentMonth &&
                         today.getFullYear() === currentYear) {
-                        dayObj.className = ' today';
-                    };
+                        dayObj.className = 'today';
+                    } else if (focusDay === day) {
+                        dayObj.className = 'focusDay';
+                    }
 
                 } else if (day >= daysInMonth) {
                     dayObj.value = ++day - daysInMonth;
@@ -78,6 +80,15 @@ function calendarReducer(state, action) {
             }
             renderData();
             break;
+
+        case FOCUS_DAY_CLASS:
+            currentYear = newState.year;
+            currentMonth = newState.month;
+            focusDay = action.payload;
+
+            renderData();
+            break;
+
         default:
     }
     return newState;

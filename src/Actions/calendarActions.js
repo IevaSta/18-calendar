@@ -1,4 +1,4 @@
-import { NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
+import { FOCUS_DAY_CLASS, NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
 
 export function renderCalendar() {
     return {
@@ -15,5 +15,12 @@ export function prevMonth() {
 export function nextMonth() {
     return {
         type: NEXT_MONTH
+    }
+}
+
+export function focusDayClass(day) {
+    return {
+        type: FOCUS_DAY_CLASS,
+        payload: day
     }
 }

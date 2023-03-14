@@ -1,6 +1,6 @@
 import DataContext from "./DataContext";
 import { useContext, useEffect } from "react";
-import { renderCalendar } from "../Actions/calendarActions";
+import { focusDayClass, renderCalendar } from "../Actions/calendarActions";
 import { focusDay } from "../Actions/notesActions";
 
 function CalendarDays() {
@@ -18,7 +18,8 @@ function CalendarDays() {
                 month: dataCalendar.month,
                 weekDay: day.weekDay,
                 day: day.value
-            }))
+            }));
+            dispachDataCalendar(focusDayClass(day.value));
         }
     }
 
@@ -29,7 +30,7 @@ function CalendarDays() {
                     <tr key={i} >
                         {week.map(day => <td onClick={() => handleFocus(day)} key={day.value} className={day.className}>{day.value}</td>)}
                     </tr>
-                )
+                );
             })}
         </tbody>
     )

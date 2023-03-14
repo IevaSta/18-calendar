@@ -5,10 +5,13 @@ function NotesList() {
 
     const { dataNotes, dispachDataNotes } = useContext(DataContext);
 
+    const { day } = dataNotes;
+    console.log(day);
+
     return (
         <div className="notesList">
             <ul>
-                {dataNotes && dataNotes.data?.map(day => <li key={day.id}>{day.note}</li>)}
+                {dataNotes?.data?.map(d => day === d.date.day ? <li key={d.id}>{d.note}</li> : null)}
             </ul>
         </div>
     )
