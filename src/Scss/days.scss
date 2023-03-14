@@ -1,7 +1,19 @@
 .today {
     background-color: #fbdb86;
+
+    &:hover {
+        background-color: #e6c97a !important;
+    }
 }
 
 .notThisMonth {
     color: rgb(211, 211, 211);
+}
+
+.focusDay {
+    background-color: rgb(99, 190, 218);
+
+    &:hover {
+        background-color: rgb(89, 168, 192) !important;
+    }
 }
