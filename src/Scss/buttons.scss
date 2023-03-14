@@ -39,20 +39,6 @@ button {
         }
     }
 
-    // &.green {
-    //     background-color: #b3c963;
-    //     width: 100%;
-
-    //     &:hover,
-    //     &:focus {
-    //         background-color: #97aa54;
-    //     }
-
-    //     &:active {
-    //         background-color: #799042;
-    //     }
-    // }
-
     &.black {
         background-color: white;
         font-size: 40px;
@@ -65,6 +51,21 @@ button {
         &:focus,
         &:active {
             color: #13181e;
+        }
+    }
+
+    &.grey {
+        background-color: rgb(255, 255, 255);
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        color: #2e3136;
+        text-align: center;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #fbdb86;
         }
     }
 

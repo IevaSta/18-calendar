@@ -19,12 +19,17 @@
 }
 
 .notesList {
-    ul {
+    ol {
         padding: 0 0 0 20px;
         margin-left: 15px;
 
         li {
             padding: 10px 0 10px;
+
+            .delete_button {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 }
