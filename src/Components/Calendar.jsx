@@ -27,7 +27,7 @@ function Calendar() {
                     <button className='black' onClick={handleNextMonth}>&#187;</button>
                 </div>
             </div>
-            <table className='table'>
+            <table>
                 <thead>
                     <tr>
                         <th>MON</th>

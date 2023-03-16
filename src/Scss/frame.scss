@@ -1,6 +1,7 @@
 .container_main {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     .left {
         min-width: 400px;

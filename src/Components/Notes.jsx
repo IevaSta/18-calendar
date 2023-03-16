@@ -1,11 +1,12 @@
 import { useContext, useEffect, useRef } from "react";
+import { focusDayClass } from "../Actions/calendarActions";
 import { addNote, renderNotes } from "../Actions/notesActions";
 import DataContext from "./DataContext";
 import NotesList from "./NotesList";
 
 function Notes() {
 
-    const { dataNotes, dispachDataNotes } = useContext(DataContext);
+    const { dataNotes, dispachDataNotes, dispachDataCalendar } = useContext(DataContext);
 
     useEffect(() => {
         dispachDataNotes(renderNotes())
@@ -25,17 +26,19 @@ function Notes() {
 
     const noteRef = useRef();
 
-    const addNewNote = () => {
+    const addNewNote = async (e) => {
+        e.preventDefault()
         const note = noteRef.current.value;
 
         if (note) {
-            dispachDataNotes(addNote(
+            await dispachDataNotes(addNote(
                 {
                     date: { year, month, day },
                     note
                 }
             ));
 
+            dispachDataCalendar(focusDayClass(day));
             noteRef.current.value = '';
         }
     }

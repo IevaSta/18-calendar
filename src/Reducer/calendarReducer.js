@@ -1,7 +1,6 @@
 import { FOCUS_DAY_CLASS, NEXT_MONTH, PREV_MONTH, RENDER_CALENDAR } from "../ActionsTypes/calendarActionsTypes";
 
 function calendarReducer(state, action) {
-
     let newState = { ...state };
 
     const today = new Date();
@@ -10,10 +9,14 @@ function calendarReducer(state, action) {
     let currentMonth = today.getMonth();
     let focusDay;
 
+
     const renderData = () => {
         newState.data = [];
         newState.year = currentYear;
         newState.month = currentMonth;
+
+        let notesData = JSON.parse(localStorage.getItem('notesList_data')) || [];
+        notesData.filter(n => n.date.year === currentYear && n.date.month === currentMonth);
 
         const prevDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
@@ -37,6 +40,11 @@ function calendarReducer(state, action) {
                         dayObj.className = 'today';
                     } else if (focusDay === day) {
                         dayObj.className = 'focusDay';
+                    }
+
+                    const _day = day;
+                    if (notesData.some(n => n.date.day === _day)) {
+                        dayObj.className += ' dayBorder';
                     }
 
                 } else if (day >= daysInMonth) {
