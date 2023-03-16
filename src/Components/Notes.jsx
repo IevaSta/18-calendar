@@ -23,7 +23,6 @@ function Notes() {
 
     const { year, month, day, weekDay } = dataNotes;
 
-
     const noteRef = useRef();
 
     const addNewNote = () => {
