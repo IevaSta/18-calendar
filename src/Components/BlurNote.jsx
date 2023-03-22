@@ -13,12 +13,16 @@ function BlurNote() {
         dispachDataCalendar(focusDayClass(day));
     }
 
+    const handleFocusNote = (note) => {
+        console.log(note);
+    }
+
     return (
         <div className="notesList">
             <ol>
                 {dataNotes?.data?.map(d => day === d.date.day ?
                     <li key={d.id}>
-                        <div className="delete_button">
+                        <div onClick={() => handleFocusNote(d.note)} className="note">
                             <span>{d.note}</span>
                             <button className="grey" onClick={() => handleDelete(d.id)}>&#9760;</button>
                         </div>

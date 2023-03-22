@@ -44,7 +44,7 @@ function calendarReducer(state, action) {
 
                     const _day = day;
                     if (notesData.some(n => n.date.day === _day)) {
-                        dayObj.className += ' dayBorder';
+                        dayObj.className += ' noteBuble';
                     }
 
                 } else if (day >= daysInMonth) {
