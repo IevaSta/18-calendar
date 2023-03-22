@@ -19,25 +19,23 @@
 }
 
 .notesList {
-    ol {
-        padding: 0 0 0 20px;
-        margin-left: 15px;
+    padding: 0 0 0 20px;
+    margin-left: 15px;
 
-        li {
-            padding: 10px 0 10px;
+    li {
+        padding: 10px 0 10px;
 
-            &:hover,
-            &:focus,
-            &:active {
-                font-size: 20px;
-            }
+        &:hover,
+        &:focus,
+        &:active {
+            font-size: 20px;
+        }
 
-            .note {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-            }
+        .note {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
         }
     }
 }

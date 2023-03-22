@@ -1,4 +1,4 @@
-import { ADD_NOTE, DELETE_NOTE, FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 import getId from "../Functions/getId";
 
 function notesReducer(state, action) {
@@ -38,6 +38,10 @@ function notesReducer(state, action) {
         case DELETE_NOTE:
             newState.data = [...newState.data?.filter(n => n.id !== action.payload)];
             localStorage.setItem('notesList_data', JSON.stringify(newState.data));
+            break;
+
+        case FOCUS_NOTE:
+            newState.data = newState.data?.map(e => ({ ...e, focus: e.id === action.payload }));
             break;
 
         default:

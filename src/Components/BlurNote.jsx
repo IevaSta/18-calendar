@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { focusDayClass } from "../Actions/calendarActions";
-import { deleteNote } from "../Actions/notesActions";
+import { deleteNote, focusNote } from "../Actions/notesActions";
 import DataContext from "./DataContext";
 
-function BlurNote() {
+function BlurNote({ n }) {
     const { dataNotes, dispachDataNotes, dispachDataCalendar } = useContext(DataContext);
 
     const { day } = dataNotes;
@@ -13,22 +13,18 @@ function BlurNote() {
         dispachDataCalendar(focusDayClass(day));
     }
 
-    const handleFocusNote = (note) => {
-        console.log(note);
+    const handleFocusNote = (id) => {
+        dispachDataNotes(focusNote(id))
     }
 
     return (
         <div className="notesList">
-            <ol>
-                {dataNotes?.data?.map(d => day === d.date.day ?
-                    <li key={d.id}>
-                        <div onClick={() => handleFocusNote(d.note)} className="note">
-                            <span>{d.note}</span>
-                            <button className="grey" onClick={() => handleDelete(d.id)}>&#9760;</button>
-                        </div>
-                    </li>
-                    : null)}
-            </ol>
+            <li>
+                <div onClick={() => handleFocusNote(n.id)} className="note">
+                    <span>{n.note}</span>
+                    <button className="grey" onClick={() => handleDelete(n.id)}>&#9760;</button>
+                </div>
+            </li>
         </div>
     );
 }

@@ -45,15 +45,6 @@ function App() {
           <Notes />
         </main>
 
-        {/* 
-      -notes
-        -savaites diena ir menesio diena
-        -notes sukurimas(form)
-        -notes list
-          -note
-          -mygtukai edit/delete
-*/}
-
       </DataContext.Provider>
     </div>
   );

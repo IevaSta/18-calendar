@@ -1,4 +1,4 @@
-import { ADD_NOTE, DELETE_NOTE, FOCUS_DAY, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 
 export function renderNotes() {
     return {
@@ -23,6 +23,13 @@ export function addNote(data) {
 export function deleteNote(id) {
     return {
         type: DELETE_NOTE,
+        payload: id
+    };
+}
+
+export function focusNote(id) {
+    return {
+        type: FOCUS_NOTE,
         payload: id
     };
 }
