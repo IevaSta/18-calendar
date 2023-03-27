@@ -1,4 +1,4 @@
-import { ADD_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, CANCEL_FOCUS_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
 import getId from "../Functions/getId";
 
 function notesReducer(state, action) {
@@ -42,6 +42,10 @@ function notesReducer(state, action) {
 
         case FOCUS_NOTE:
             newState.data = newState.data?.map(e => ({ ...e, focus: e.id === action.payload }));
+            break;
+
+        case CANCEL_FOCUS_NOTE:
+            newState.data = newState.data?.map(e => ({ ...e, focus: null }));
             break;
 
         default:
