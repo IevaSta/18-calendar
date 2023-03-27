@@ -45,7 +45,7 @@ function notesReducer(state, action) {
             break;
 
         case CANCEL_FOCUS_NOTE:
-            newState.data = newState.data?.map(e => ({ ...e, focus: null }));
+            newState.data = newState.data?.map(e => ({ ...e, focus: false }));
             break;
 
         case SAVE_EDIT_NOTE:
