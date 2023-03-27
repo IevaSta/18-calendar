@@ -1,4 +1,4 @@
-import { ADD_NOTE, CANCEL_FOCUS_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES } from "../ActionsTypes/notesActionTypes";
+import { ADD_NOTE, CANCEL_FOCUS_NOTE, DELETE_NOTE, FOCUS_DAY, FOCUS_NOTE, RENDER_NOTES, SAVE_EDIT_NOTE } from "../ActionsTypes/notesActionTypes";
 
 export function renderNotes() {
     return {
@@ -37,5 +37,12 @@ export function focusNote(id) {
 export function cancelFocusNote() {
     return {
         type: CANCEL_FOCUS_NOTE
+    };
+}
+
+export function saveEditNote(id, data) {
+    return {
+        type: SAVE_EDIT_NOTE,
+        payload: { id, data }
     };
 }

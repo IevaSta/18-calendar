@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
-import { cancelFocusNote } from "../Actions/notesActions";
+import { cancelFocusNote, saveEditNote } from "../Actions/notesActions";
 import DataContext from "./DataContext";
 
 function FocusedNote({ n }) {
@@ -13,11 +13,19 @@ function FocusedNote({ n }) {
         dispachDataNotes(cancelFocusNote())
     }
 
+    const handleEditSave = (n) => {
+        const isNote = note;
+
+        if (isNote) {
+            dispachDataNotes(saveEditNote(n.id, { note: isNote }))
+        }
+    }
+
     return (
         <li key={n.id}>
             <input value={note} onChange={event => setNote(event.target.value)} />
             <button onClick={() => handleCancelFocusNote()}>cancel</button>
-            <button>save</button>
+            <button onClick={() => handleEditSave(n)}>save</button>
         </li>
     );
 }

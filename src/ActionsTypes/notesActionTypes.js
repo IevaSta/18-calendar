@@ -4,3 +4,5 @@ export const ADD_NOTE = 'ADD_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const FOCUS_NOTE = 'FOCUS_NOTE';
 export const CANCEL_FOCUS_NOTE = 'CANCEL_FOCUS_NOTE';
+export const SAVE_EDIT_NOTE = 'SAVE_EDIT_NOTE';
+
