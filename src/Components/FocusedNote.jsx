@@ -23,9 +23,10 @@ function FocusedNote({ n }) {
 
     return (
         <li key={n.id}>
-            <input value={note} onChange={event => setNote(event.target.value)} />
-            <button onClick={() => handleCancelFocusNote()}>cancel</button>
-            <button onClick={() => handleEditSave(n)}>save</button>
+            <div className="note">
+                <input value={note} onChange={event => setNote(event.target.value)} onKeyUp={e => e.key === 'Enter' && handleEditSave(n)} />
+                <button className="grey" onClick={() => handleCancelFocusNote()}>&#10005;</button>
+            </div>
         </li>
     );
 }
