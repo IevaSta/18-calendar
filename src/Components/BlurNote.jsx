@@ -18,14 +18,12 @@ function BlurNote({ n }) {
     }
 
     return (
-        <div className="notesList">
-            <li>
-                <div onClick={() => handleFocusNote(n.id)} className="note">
-                    <span>{n.note}</span>
-                    <button className="grey" onClick={() => handleDelete(n.id)}>&#9760;</button>
-                </div>
-            </li>
-        </div>
+        <li>
+            <div onClick={() => handleFocusNote(n.id)} className="note">
+                <span>{n.note}</span>
+                <button className="grey" onClick={() => handleDelete(n.id)}>&#9760;</button>
+            </div>
+        </li>
     );
 }
 
